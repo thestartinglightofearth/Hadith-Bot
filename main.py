@@ -13,7 +13,7 @@ def add_post(content):
 def get_hadith(num):
 	try:
 		req = requests.get(api+num).json()["data"]
-		return (req["description"]+"\n\n"+req["explanation"]+"\n\nSource: Muslim Bangla App").replace("<br>","\n")
+		return ("হাদিস:- "+req["description"]+"\n\n"+req["explanation"]+"\n\n- "+req["book"]["title"]+" Muslim Bangla App").replace("<br>","\n")
 	except Exception as e:
 		print(e)
 i = 0
